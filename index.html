@@ -13,6 +13,20 @@
             color: #fff;
             overflow-x: hidden;
         }
+        .countdown {
+            text-align: center;
+            padding: 30px 20px 10px;
+            font-size: 2rem;
+            background: #111;
+        }
+        .countdown span {
+            display: inline-block;
+            min-width: 60px;
+            margin: 0 10px;
+            background: #222;
+            padding: 10px;
+            border-radius: 8px;
+        }
         .swiper {
             width: 100vw;
             height: 90vh;
@@ -67,6 +81,14 @@
     </style>
 </head>
 <body>
+    <div class="countdown">
+        Countdown to Marathon Day: 
+        <span id="days">00</span>d : 
+        <span id="hours">00</span>h : 
+        <span id="minutes">00</span>m : 
+        <span id="seconds">00</span>s
+    </div>
+
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="background-image: url('slide1.jpg');">
@@ -105,13 +127,11 @@
                 </div>
             </div>
         </div>
-        <!-- Pagination -->
         <div class="swiper-pagination"></div>
-        <!-- Navigation Buttons -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
@@ -139,6 +159,29 @@
                 prevEl: ".swiper-button-prev",
             },
         });
+
+        // Countdown Timer
+        const countDownDate = new Date("Nov 30, 2025 00:00:00").getTime();
+
+        const timerInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                document.querySelector(".countdown").innerHTML = "🎉 The Marathon is On!";
+            }
+        }, 1000);
     </script>
 </body>
 </html>
