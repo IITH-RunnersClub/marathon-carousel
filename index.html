@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mind-Blowing Carousel</title>
+    <title>IITH Half Marathon Carousel</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <style>
         body {
@@ -18,6 +18,7 @@
             height: 90vh;
         }
         .swiper-slide {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -25,6 +26,37 @@
             color: #fff;
             background-size: cover;
             background-position: center;
+        }
+        .slide-content {
+            position: absolute;
+            bottom: 15%;
+            left: 10%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px 30px;
+            border-radius: 12px;
+            max-width: 400px;
+        }
+        .slide-content h2 {
+            margin: 0;
+            font-size: 2rem;
+            color: #fff;
+        }
+        .slide-content p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+        .slide-content a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #ff6a00;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .slide-content a:hover {
+            background: #e45700;
         }
         .swiper-pagination-bullet {
             background: #fff;
@@ -37,11 +69,34 @@
 <body>
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url('slide1.jpg');">Slide 1</div>
-            <div class="swiper-slide" style="background-image: url('slide2.jpg');">Slide 2</div>
-            <div class="swiper-slide" style="background-image: url('slide3.JPG');">Slide 3</div>
-            <div class="swiper-slide" style="background-image: url('slide4.JPG');">Slide 4</div>
-
+            <div class="swiper-slide" style="background-image: url('slide1.jpg');">
+                <div class="slide-content">
+                    <h2>Run with Passion</h2>
+                    <p>Be part of the IITH Half Marathon 2025</p>
+                    <a href="#register">Register Now</a>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('slide2.jpg');">
+                <div class="slide-content">
+                    <h2>Push Your Limits</h2>
+                    <p>Challenge yourself in the scenic IIT Hyderabad campus</p>
+                    <a href="#route">View Route</a>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('slide3.JPG');">
+                <div class="slide-content">
+                    <h2>Support the Cause</h2>
+                    <p>Join hands with us and our amazing sponsors</p>
+                    <a href="#sponsors">Meet Our Sponsors</a>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image: url('slide4.JPG');">
+                <div class="slide-content">
+                    <h2>Celebrate the Spirit</h2>
+                    <p>Experience the joy, energy, and unity of IITH Runners</p>
+                    <a href="#highlights">View Highlights</a>
+                </div>
+            </div>
         </div>
         <!-- Pagination -->
         <div class="swiper-pagination"></div>
