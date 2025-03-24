@@ -64,22 +64,6 @@
     .swiper-button-next, .swiper-button-prev {
       color: #fff;
     }
-    .video-slide iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 12px;
-    }
-    .video-container {
-      position: relative;
-      width: 80%;
-      padding-top: 45%;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
   </style>
 </head>
 <body>
@@ -95,47 +79,14 @@
         </div>
       </div>
 
-<!-- Slide 2: Teaser Video Matching Style -->
-<div class="swiper-slide" style="background-image: url('slide-teaser.jpg'); background-size: cover; background-position: center;">
-  <div class="slide-content">
-    <h2>🎬 Official Teaser</h2>
-    <p>Get a glimpse of the energy, joy, and memories of IITH Half Marathon</p>
-    <a href="https://youtu.be/_nYiBTeQ6tA" target="_blank">Watch Full Video</a>
-  </div>
-</div>
-
-
-  <!-- Overlay Content Matching Other Slides -->
-  <div class="slide-content" style="
-    position: absolute;
-    top: 15%;
-    left: 10%;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px 30px;
-    border-radius: 12px;
-    max-width: 400px;
-  ">
-    <h2 style="margin: 0; font-size: 2rem; color: #fff;">🎬 Official Teaser</h2>
-    <p style="margin: 10px 0; font-size: 1rem;">
-      Get a glimpse of the energy, joy, and memories of IITH Half Marathon
-    </p>
-    <a href="https://youtu.be/_nYiBTeQ6tA" target="_blank" style="
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #ff6a00;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: bold;
-      transition: background 0.3s;
-    ">Watch Full Video</a>
-  </div>
-</div>
-
-
-
+      <!-- Slide 2: Teaser Video as Background Image with Overlay -->
+      <div class="swiper-slide" style="background-image: url('slide-teaser.jpg'); background-size: cover; background-position: center;">
+        <div class="slide-content">
+          <h2>🎬 Official Teaser</h2>
+          <p>Get a glimpse of the energy, joy, and memories of IITH Half Marathon</p>
+          <a href="https://youtu.be/_nYiBTeQ6tA" target="_blank">Watch Full Video</a>
+        </div>
+      </div>
 
       <!-- Slide 3 -->
       <div class="swiper-slide" style="background-image: url('slide2.jpg');">
@@ -184,8 +135,8 @@
     var swiper = new Swiper(".mySwiper", {
       effect: "coverflow",
       grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto",
+      centeredSlides: false,
+      slidesPerView: 1,
       coverflowEffect: {
         rotate: 50,
         stretch: 0,
