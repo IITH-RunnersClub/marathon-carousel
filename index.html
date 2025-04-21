@@ -67,6 +67,8 @@
     .swiper-button-next, .swiper-button-prev {
       color: #fff;
     }
+
+    /* Mobile adjustments */
     @media (max-width: 768px) {
       .swiper {
         height: 80vh;
@@ -74,9 +76,14 @@
       .slide-content {
         font-size: 0.9rem;
         padding: 15px 20px;
+        width: 90%;
+        left: 5%;
+        right: 5%;
+        bottom: 5%;
+        max-width: none;
       }
       .slide-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
       .slide-content p {
         font-size: 0.9rem;
