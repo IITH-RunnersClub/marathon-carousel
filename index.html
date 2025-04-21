@@ -29,12 +29,15 @@
     }
     .slide-content {
       position: absolute;
-      bottom: 15%;
-      left: 10%;
-      background: rgba(0, 0, 0, 0.6);
+      bottom: 10%;
+      left: 5%;
+      right: 5%;
+      background: rgba(0, 0, 0, 0.65);
       padding: 20px 30px;
       border-radius: 12px;
-      max-width: 400px;
+      max-width: 500px;
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
     .slide-content h2 {
       margin: 0;
@@ -64,6 +67,21 @@
     .swiper-button-next, .swiper-button-prev {
       color: #fff;
     }
+    @media (max-width: 768px) {
+      .swiper {
+        height: 80vh;
+      }
+      .slide-content {
+        font-size: 0.9rem;
+        padding: 15px 20px;
+      }
+      .slide-content h2 {
+        font-size: 1.5rem;
+      }
+      .slide-content p {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -75,12 +93,12 @@
         <div class="slide-content">
           <h2>Run with Passion</h2>
           <p>Be part of the IITH Half Marathon 2025</p>
-         <a href="#" onclick="alert('Registration will open soon. Stay tuned!')">Register Now</a>
+          <a href="#" onclick="alert('Registration will open soon. Stay tuned!')">Register Now</a>
         </div>
       </div>
 
-      <!-- Slide 2: Teaser Video as Background Image with Overlay -->
-      <div class="swiper-slide" style="background-image: url('slide-teaser1.jpg'); background-size: cover; background-position: center;">
+      <!-- Slide 2 -->
+      <div class="swiper-slide" style="background-image: url('slide-teaser1.jpg');">
         <div class="slide-content">
           <h2>🎬 Official Teaser</h2>
           <p>Get a glimpse of the energy, joy, and memories of IITH Half Marathon</p>
