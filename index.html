@@ -119,13 +119,15 @@
     <div class="swiper-wrapper">
 
       <!-- Slide 1 -->
-      <div class="swiper-slide" style="background-image: url('poster2025.JPG');">
-        <div class="slide-content">
-          <h2>🏃 Official Poster</h2>
-          <p>Unveiling the spirit of IITH Half Marathon 2025. Be part of the journey!</p>
-          <a href="poster.png" target="_blank">View Poster</a>
-        </div>
-      </div>
+     <!-- Slide 1 with <img> tag -->
+<div class="swiper-slide" style="flex-direction: column;">
+  <img src="poster2025.JPG" alt="IITH Half Marathon Poster" style="width: 100%; height: auto; max-height: 100vh; object-fit: contain;" />
+  <div class="slide-content" style="position: relative; margin-top: -150px;">
+    <h2>🏃 Official Poster</h2>
+    <p>Unveiling the spirit of IITH Half Marathon 2025. Be part of the journey!</p>
+    <a href="poster.png" target="_blank">View Poster</a>
+  </div>
+</div>
 
       <!-- Slide 2 -->
       <div class="swiper-slide" style="background-image: url('slide-teaser1.jpg');">
