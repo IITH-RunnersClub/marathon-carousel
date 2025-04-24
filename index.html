@@ -13,10 +13,12 @@
       color: #fff;
       overflow-x: hidden;
     }
+
     .swiper {
       width: 100vw;
       height: 90vh;
     }
+
     .swiper-slide {
       position: relative;
       display: flex;
@@ -29,10 +31,7 @@
       background-repeat: no-repeat;
       background-position: center;
     }
-    .swiper-slide.teaser {
-      background-size: contain !important;
-      background-color: #000;
-    }
+
     .slide-content {
       position: absolute;
       bottom: 10%;
@@ -45,15 +44,18 @@
       text-align: left;
       box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
+
     .slide-content h2 {
       margin: 0;
       font-size: 2rem;
       color: #fff;
     }
+
     .slide-content p {
       margin: 10px 0;
       font-size: 1rem;
     }
+
     .slide-content a {
       display: inline-block;
       margin-top: 10px;
@@ -64,20 +66,32 @@
       border-radius: 8px;
       transition: background 0.3s;
     }
+
     .slide-content a:hover {
       background: #e45700;
     }
+
     .swiper-pagination-bullet {
       background: #fff;
     }
+
     .swiper-button-next, .swiper-button-prev {
       color: #fff;
     }
 
+    /* ✅ Responsive Fix for Mobile Image Visibility */
     @media (max-width: 768px) {
       .swiper {
         height: 80vh;
       }
+
+      .swiper-slide {
+        background-size: contain !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #000;
+      }
+
       .slide-content {
         font-size: 0.9rem;
         padding: 15px 20px;
@@ -87,9 +101,11 @@
         bottom: 5%;
         max-width: none;
       }
+
       .slide-content h2 {
         font-size: 1.4rem;
       }
+
       .slide-content p {
         font-size: 0.9rem;
       }
@@ -101,7 +117,7 @@
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
 
-      <!-- Slide 1: Official Poster -->
+      <!-- Slide 1 -->
       <div class="swiper-slide" style="background-image: url('poster2025.JPG');">
         <div class="slide-content">
           <h2>🏃 Official Poster</h2>
@@ -110,8 +126,8 @@
         </div>
       </div>
 
-      <!-- Slide 2: Official Teaser (fixed layout) -->
-      <div class="swiper-slide teaser" style="background-image: url('slide-teaser1.jpg');">
+      <!-- Slide 2 -->
+      <div class="swiper-slide" style="background-image: url('slide-teaser1.jpg');">
         <div class="slide-content">
           <h2>🎬 Official Teaser</h2>
           <p>Get a glimpse of the energy, joy, and memories of IITH Half Marathon</p>
