@@ -16,33 +16,35 @@
 
     .swiper {
       width: 100vw;
-      height: 90vh;
+      height: auto;
     }
 
     .swiper-slide {
-      position: relative;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
-      color: #fff;
       background-color: #000;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+      padding-bottom: 20px;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      max-height: 75vh;
     }
 
     .slide-content {
-      position: absolute;
-      bottom: 10%;
-      left: 5%;
-      right: 5%;
-      background: rgba(0, 0, 0, 0.65);
+      margin-top: -120px;
       padding: 20px 30px;
+      background: rgba(0, 0, 0, 0.65);
       border-radius: 12px;
       max-width: 500px;
       text-align: left;
       box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 2;
     }
 
     .slide-content h2 {
@@ -79,28 +81,12 @@
       color: #fff;
     }
 
-    /* ✅ Responsive Fix for Mobile Image Visibility */
     @media (max-width: 768px) {
-      .swiper {
-        height: auto;
-      }
-
-      .swiper-slide {
-        background-size: contain !important;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: #000;
-        min-height: 65vh;
-      }
-
       .slide-content {
         font-size: 0.9rem;
         padding: 15px 20px;
         width: 90%;
-        left: 5%;
-        right: 5%;
-        bottom: 5%;
-        max-width: none;
+        margin-top: -90px;
       }
 
       .slide-content h2 {
@@ -119,18 +105,18 @@
     <div class="swiper-wrapper">
 
       <!-- Slide 1 -->
-     <!-- Slide 1 with <img> tag -->
-<div class="swiper-slide" style="flex-direction: column;">
-  <img src="poster2025.JPG" alt="IITH Half Marathon Poster" style="width: 100%; height: auto; max-height: 100vh; object-fit: contain;" />
-  <div class="slide-content" style="position: relative; margin-top: -150px;">
-    <h2>🏃 Official Poster</h2>
-    <p>Unveiling the spirit of IITH Half Marathon 2025. Be part of the journey!</p>
-    <a href="poster.png" target="_blank">View Poster</a>
-  </div>
-</div>
+      <div class="swiper-slide">
+        <img src="poster2025.JPG" alt="IITH Half Marathon Poster">
+        <div class="slide-content">
+          <h2>🏃 Official Poster</h2>
+          <p>Unveiling the spirit of IITH Half Marathon 2025. Be part of the journey!</p>
+          <a href="poster.png" target="_blank">View Poster</a>
+        </div>
+      </div>
 
       <!-- Slide 2 -->
-      <div class="swiper-slide" style="background-image: url('slide-teaser1.jpg');">
+      <div class="swiper-slide">
+        <img src="slide-teaser1.jpg" alt="Teaser Slide">
         <div class="slide-content">
           <h2>🎬 Official Teaser</h2>
           <p>Get a glimpse of the energy, joy, and memories of IITH Half Marathon</p>
@@ -139,7 +125,8 @@
       </div>
 
       <!-- Slide 3 -->
-      <div class="swiper-slide" style="background-image: url('slide1.jpg');">
+      <div class="swiper-slide">
+        <img src="slide1.jpg" alt="Push Your Limits">
         <div class="slide-content">
           <h2>Push Your Limits</h2>
           <p>Be part of the IITH Half Marathon 2025</p>
@@ -148,7 +135,8 @@
       </div>
 
       <!-- Slide 4 -->
-      <div class="swiper-slide" style="background-image: url('slide2.jpg');">
+      <div class="swiper-slide">
+        <img src="slide2.jpg" alt="Route Map">
         <div class="slide-content">
           <h2>Route Map</h2>
           <p>Challenge yourself in the scenic IIT Hyderabad campus</p>
@@ -157,7 +145,8 @@
       </div>
 
       <!-- Slide 5 -->
-      <div class="swiper-slide" style="background-image: url('slide3.JPG');">
+      <div class="swiper-slide">
+        <img src="slide3.JPG" alt="Support the Cause">
         <div class="slide-content">
           <h2>Support the Cause</h2>
           <p>Join hands with us and our amazing sponsors</p>
@@ -166,7 +155,8 @@
       </div>
 
       <!-- Slide 6 -->
-      <div class="swiper-slide" style="background-image: url('slide4.JPG');">
+      <div class="swiper-slide">
+        <img src="slide4.JPG" alt="Celebrate the Spirit">
         <div class="slide-content">
           <h2>Celebrate the Spirit</h2>
           <p>Experience the joy, energy, and unity of IITH Runners</p>
@@ -175,7 +165,8 @@
       </div>
 
       <!-- Slide 7 -->
-      <div class="swiper-slide" style="background-image: url('slide5.JPG');">
+      <div class="swiper-slide">
+        <img src="slide5.JPG" alt="Feel the Energy">
         <div class="slide-content">
           <h2>Feel the Energy</h2>
           <p>Join hundreds of runners in a celebration of endurance</p>
@@ -194,17 +185,10 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script>
     var swiper = new Swiper(".mySwiper", {
-      effect: "coverflow",
+      effect: "slide",
       grabCursor: true,
       centeredSlides: false,
       slidesPerView: 1,
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      },
       autoplay: {
         delay: 4000,
         disableOnInteraction: false,
